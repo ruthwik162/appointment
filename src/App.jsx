@@ -66,7 +66,7 @@ const App = () => {
         </Routes>
       </div>
 
-      {isAdmin && <Footer />}
+      {!isAdmin && <Footer />}
     </div>
   )
 }

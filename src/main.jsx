@@ -6,7 +6,7 @@ import App from './App.jsx'
 import { AppContextProvider } from './AppContext/AppContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename='/teacher-student/'>
+  <BrowserRouter basename='/appointment/'>
     <AppContextProvider>
       <App />
     </AppContextProvider>
