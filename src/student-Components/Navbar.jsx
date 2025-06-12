@@ -8,7 +8,7 @@ const Navbar = () => {
     const { user, URL, setUser, navigate, logout, setShowUserLogin } = useAppContext();
     const isAdmin = user?.role === "admin";
     const navLinks = [
-        { name: 'Home', path: '/home' },
+        { name: 'Home', path: '/' },
         { name: 'Departments', path: '/department' },
         { name: 'faculty', path: '/faculty' },
         ...(user ? [{ name: 'MyAppointments', path: '/my-appointment' }] : [])
@@ -65,7 +65,7 @@ const Navbar = () => {
             {/* Logo */}
 
             <NavLink
-                to={isAdmin ? "/adminhome" : "/home"}
+                to={isAdmin ? "/adminhome" : "/"}
                 className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl block"
             >
                 <img

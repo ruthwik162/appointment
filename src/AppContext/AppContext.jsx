@@ -120,7 +120,7 @@ export const AppContextProvider = ({ children }) => {
         setUser(userDetails);
 
         toast.success("Logged in successfully!");
-        navigate(user.role === "admin" ? "/adminhome" : "/home");
+        navigate(user.role === "admin" ? "/adminhome" : "/");
         setShowUserLogin(false);
       }
     } catch (error) {
@@ -134,7 +134,7 @@ export const AppContextProvider = ({ children }) => {
     localStorage.removeItem("user");
     setUser(null);
     toast.success("Logged out successfully!");
-    navigate("/home");
+    navigate("/");
   };
 
   return (
