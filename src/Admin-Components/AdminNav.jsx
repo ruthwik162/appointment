@@ -4,7 +4,7 @@ import { assets } from "../assets/assets";
 import { NavLink } from "react-router-dom";
 
 const AdminNav = () => {
-const navLinks = [
+    const navLinks = [
         { name: 'Home', path: '/adminhome' },
         { name: 'View Teachers', path: '/viewteachers' },
         { name: 'View Students', path: '/viewstudents' }
@@ -14,7 +14,7 @@ const navLinks = [
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
-    const { user, setUser, navigate, logout, setShowUserLogin,URL } = useAppContext();
+    const { user, setUser, navigate, logout, setShowUserLogin, URL } = useAppContext();
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -53,11 +53,10 @@ const navLinks = [
     }, [isProfileDropdownOpen]);
 
     return (
-        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-8 lg:px-16 xl:px-24 transition-all duration-500 z-50 ${
-            isScrolled 
-                ? "bg-white/90 dark:bg-gray-200/90 shadow-sm backdrop-blur-lg py-3" 
+        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-8 lg:px-16 xl:px-24 transition-all duration-500 z-50 ${isScrolled
+                ? "bg-white/90 dark:bg-gray-200/90 shadow-sm backdrop-blur-lg py-3"
                 : "py-4 bg-gradient-to-b from-black/20 to-transparent"
-        }`}>
+            }`}>
 
             {/* Logo */}
             <NavLink to="/adminhome" className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl">
@@ -94,7 +93,7 @@ const navLinks = [
                     </button>
                 ) : (
                     <div className="profile-dropdown relative">
-                        <div 
+                        <div
                             className="flex items-center gap-2 cursor-pointer"
                             onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
                         >
@@ -111,11 +110,11 @@ const navLinks = [
                             <span className="text-white font-medium hidden lg:inline-block">
                                 {user.name?.split(' ')[0] || 'Profile'}
                             </span>
-                            <svg 
+                            <svg
                                 className={`w-4 h-4 text-white transition-transform ${isProfileDropdownOpen ? 'rotate-180' : ''}`}
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24" 
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -175,12 +174,12 @@ const navLinks = [
 
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-3 md:hidden">
-                <svg 
-                    onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                    className={`h-6 w-6 cursor-pointer ${isScrolled ? "invert" : ""}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="3" 
+                <svg
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className={`h-6 w-6 cursor-pointer ${isScrolled ? "invert" : ""}`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
                     viewBox="0 0 24 24"
                 >
                     <line x1="4" y1="6" x2="20" y2="6" />
@@ -199,10 +198,11 @@ const navLinks = [
                 </button>
 
                 {navLinks.map((link, i) => (
-                    <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+                    <NavLink key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
                         {link.name}
-                    </a>
+                    </NavLink>
                 ))}
+
 
                 {user && (
                     <div className="flex flex-col items-center gap-2">
@@ -216,29 +216,29 @@ const navLinks = [
                     </div>
                 )}
 
-                <button 
-                    onClick={() => { 
-                        navigate("/profile"); 
-                        setIsMenuOpen(false); 
-                    }} 
+                <button
+                    onClick={() => {
+                        navigate("/profile");
+                        setIsMenuOpen(false);
+                    }}
                     className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
                 >
                     Profile
                 </button>
-                
+
                 {!user ? (
-                    <button 
-                        onClick={() => setShowUserLogin(true)} 
+                    <button
+                        onClick={() => setShowUserLogin(true)}
                         className="cursor-pointer px-6 py-2 mt-2 bg-indigo-500 hover:bg-indigo-400 transition text-white rounded-full text-sm"
                     >
                         Login
                     </button>
                 ) : (
-                    <button 
+                    <button
                         onClick={() => {
                             logout();
                             setIsMenuOpen(false);
-                        }} 
+                        }}
                         className="cursor-pointer px-6 py-2 mt-2 bg-indigo-500 hover:bg-indigo-400 transition text-white rounded-full text-sm"
                     >
                         Logout

@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
 
     const { user, URL, setUser, navigate, logout, setShowUserLogin } = useAppContext();
-    const isAdmin = user?.filter(role => role.role === "admin");
+    const isAdmin = user?.role === "admin";
     const navLinks = [
         { name: 'Home', path: '/home' },
         { name: 'Departments', path: '/department' },
@@ -63,7 +63,7 @@ const Navbar = () => {
             }`}>
 
             {/* Logo */}
-            
+
             <NavLink
                 to={isAdmin ? "/adminhome" : "/home"}
                 className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl block"
@@ -210,10 +210,11 @@ const Navbar = () => {
                 </button>
 
                 {navLinks.map((link, i) => (
-                    <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+                    <NavLink key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
                         {link.name}
-                    </a>
+                    </NavLink>
                 ))}
+
 
                 {user && (
                     <div className="flex flex-col items-center gap-2">

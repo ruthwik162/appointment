@@ -5,7 +5,7 @@ import Testimonial from '../student-Components/Testimonial'
 
 const Home = () => {
     return (
-        <div className='bg-gradient-to-r from-blue-500/10 via-teal-500/10 to-green-500/10'>
+        <div className='bg-gradient-to-r  from-blue-500/10 via-teal-500/10 to-green-500/10'>
             <Mainbanner />
             <Testimonial/>
             <DeptCat />

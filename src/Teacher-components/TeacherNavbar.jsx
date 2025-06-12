@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const TeacherNavbar = () => {
-const navLinks = [
+    const navLinks = [
         { name: 'Home', path: '/teacher-home' },
         { name: 'approveappointment', path: '/approve-appointment' },
         { name: '', path: '/faculty' },
@@ -46,11 +46,10 @@ const navLinks = [
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-8 lg:px-16 xl:px-24 transition-all duration-500 z-50 ${
-            isScrolled 
-                ? "bg-white/90 dark:bg-gray-200/90 shadow-sm backdrop-blur-lg py-3" 
+        <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-8 lg:px-16 xl:px-24 transition-all duration-500 z-50 ${isScrolled
+                ? "bg-white/90 dark:bg-gray-200/90 shadow-sm backdrop-blur-lg py-3"
                 : "py-4 bg-gradient-to-b from-black/20 to-transparent"
-        }`}>
+            }`}>
 
             {/* Logo */}
             <NavLink to="/home" className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl">
@@ -129,25 +128,26 @@ const navLinks = [
                 </button>
 
                 {navLinks.map((link, i) => (
-                    <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+                    <NavLink key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
                         {link.name}
-                    </a>
+                    </NavLink>
                 ))}
+
 
                 <button onClick={() => { navigate("/profile") }} className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
                     Profile
                 </button>
-                {!user?(
+                {!user ? (
                     <button onClick={() => setShowUserLogin(true)} className="cursor-pointer px-6 py-2 mt-2 bg-indigo-500 hover:bg-indigo-400 transition text-white rounded-full text-sm">
-                    login
-                </button>
+                        login
+                    </button>
 
-                ):(
+                ) : (
                     <button onClick={logout} className="cursor-pointer px-6 py-2 mt-2 bg-indigo-500 hover:bg-indigo-400 transition text-white rounded-full text-sm">
-                    Logout
-                </button>
+                        Logout
+                    </button>
                 )}
-                
+
             </div>
         </nav>
     );

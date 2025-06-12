@@ -107,7 +107,7 @@ const AppointmentBanner = () => {
                 }}
             />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="container mx-auto p-5 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     variants={containerVariants}
                     className="flex flex-row-reverse  md:flex-row-reverse items-center justify-between gap-6 md:gap-10 bg-white rounded-3xl shadow-xl overflow-hidden"
@@ -169,7 +169,7 @@ const AppointmentBanner = () => {
 
                     <motion.div
                         variants={imageVariants}
-                        className="w-full md:w-1/2 pb-0 flex items-center justify-center relative p-6 md:p-0"
+                        className="w-full md:w-1/2 pb-0 flex items-center justify-center relative scale-100 pl-30 md:p-0"
                         animate="float"
                     >
                         <img
