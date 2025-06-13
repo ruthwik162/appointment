@@ -6,7 +6,7 @@ import { deptDetails } from "../assets/assets";
 
 export const AppContext = createContext();
 
-    const URL = "http://localhost:3000"
+const URL = "https://appointment-server-api.onrender.com";
 
 export const AppContextProvider = ({ children }) => {
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ export const AppContextProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState({});
   const [dept, setDept] = useState([]);
   const [teacher, setTeacher] = useState([]);
+  const [appointments, setAppointments] = useState([]); // ✅ added
 
   const fetchTeacher = async () => {
     try {
@@ -26,12 +27,22 @@ export const AppContextProvider = ({ children }) => {
       console.error("Failed to fetch teachers:", error);
     }
   };
-    const fetchAll = async () => {
+
+  const fetchAll = async () => {
     try {
       const res = await axios.get(`${URL}/api/users`);
       setTeacher(res.data);
     } catch (error) {
       console.error("Failed to fetch teachers:", error);
+    }
+  };
+
+  const fetchAppointments = async () => {
+    try {
+      const res = await axios.get(`${URL}/api/appointments`);
+      setAppointments(res.data);
+    } catch (error) {
+      console.error("Failed to fetch appointments:", error);
     }
   };
 
@@ -43,6 +54,7 @@ export const AppContextProvider = ({ children }) => {
     fetchTeacher();
     fetchDept();
     fetchAll();
+    fetchAppointments(); // ✅ added
   }, []);
 
   useEffect(() => {
@@ -69,9 +81,7 @@ export const AppContextProvider = ({ children }) => {
       setShowUserLogin(true);
     } catch (error) {
       console.error("Registration error:", error.response || error);
-      toast.error(
-        error.response?.data?.message || "Error registering user."
-      );
+      toast.error(error.response?.data?.message || "Error registering user.");
     }
   };
 
@@ -94,13 +104,13 @@ export const AppContextProvider = ({ children }) => {
           return;
         }
 
-        if(user == "student"){
+        if (user === "student") {
           navigate("/");
         }
-        if(user == "teacher"){
+        if (user === "teacher") {
           navigate("/teacher-home");
         }
-        if(user == "admin"){
+        if (user === "admin") {
           navigate("/adminhome");
         }
 
@@ -156,7 +166,9 @@ export const AppContextProvider = ({ children }) => {
         setTeacher,
         login,
         logout,
-        URL
+        appointments, // ✅ added
+        setAppointments,
+        URL,
       }}
     >
       {children}

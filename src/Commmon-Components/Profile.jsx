@@ -57,7 +57,7 @@ const Profile = () => {
       }
 
       const response = await axios.put(
-        `http://localhost:3000/api/users/${user.email}`,
+        `https://appointment-server-api.onrender.com/api/users/${user.email}`,
         formData,
         {
           headers: {

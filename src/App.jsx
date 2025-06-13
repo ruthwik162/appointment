@@ -18,6 +18,8 @@ import AdminNav from './Admin-Components/AdminNav'
 import ViewTeacher from './Admin-Pages/ViewTeacher'
 import ViewStudents from './Admin-Pages/ViewStudents'
 import Admin from './Admin-Pages/Admin'
+import ViewAllAppointments from './Admin-Pages/ViewAllAppointments'
+import AllAppointments from './Admin-Pages/AllAppointments'
 
 const App = () => {
   const { showUserLogin, user } = useAppContext()
@@ -49,6 +51,9 @@ const App = () => {
           <Route path='/adminhome' element={<Admin />} />
           <Route path='/viewteachers' element={<ViewTeacher />} />
           <Route path='/viewstudents' element={<ViewStudents />} />
+          <Route path='/viewallappointments' element={<ViewAllAppointments />} />
+          <Route path='/allappointments' element={<AllAppointments />} />
+          <Route path='/allappointments/viewallappointments/:department' element={<ViewAllAppointments />} />
 
           {/* Student Routes */}
           <Route path='/' element={<Home />} />

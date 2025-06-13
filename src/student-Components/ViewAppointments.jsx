@@ -23,7 +23,7 @@ const ViewAppointments = () => {
         return;
       }
       const response = await axios.get(
-        `http://localhost:3000/api/student-appointments/${encodeURIComponent(user.email)}`
+        `https://appointment-server-api.onrender.com/api/student-appointments/${encodeURIComponent(user.email)}`
       );
       setAppointments(response.data || []);
     } catch (error) {

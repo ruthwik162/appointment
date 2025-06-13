@@ -27,7 +27,7 @@ const TeacherApprove = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:3000/api/teacher-appointments/${encodeURIComponent(userData.email)}`
+          `https://appointment-server-api.onrender.com/api/teacher-appointments/${encodeURIComponent(userData.email)}`
         );
         setAppointments(response.data);
       } catch (err) {

@@ -9,14 +9,13 @@ const TeacherNavbar = () => {
     const navLinks = [
         { name: 'Home', path: '/teacher-home' },
         { name: 'approveappointment', path: '/approve-appointment' },
-        { name: '', path: '/faculty' },
-        { name: '', path: '/my-appointment' },
+
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const { user, setUser, navigate, logout, setShowUserLogin } = useAppContext();
+    const { user, setUser, navigate, logout, setShowUserLogin, URL } = useAppContext();
 
     // Fetch user profile image from backend
     useEffect(() => {
@@ -52,7 +51,7 @@ const TeacherNavbar = () => {
             }`}>
 
             {/* Logo */}
-            <NavLink to="/home" className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl">
+            <NavLink to="/" className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl">
                 <img className="h-15 rounded object-cover " src={assets.logo} alt="logo" />
             </NavLink>
 

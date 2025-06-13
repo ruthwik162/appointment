@@ -19,7 +19,7 @@ const ViewStudents = () => {
   const fetchStudents = async () => {
     try {
       setLoading(true)
-      const response = await fetch('http://localhost:3000/api/users/role/student')
+      const response = await fetch('https://appointment-server-api.onrender.com/api/users/role/student')
       const data = await response.json()
       setStudents(data)
       setLoading(false)
@@ -47,7 +47,7 @@ const ViewStudents = () => {
   const handleUpdate = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch(`http://localhost:3000/api/users/${currentStudent._id}`, {
+      const response = await fetch(`https://appointment-server-api.onrender.com/api/users/${currentStudent._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const ViewStudents = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+        const response = await fetch(`https://appointment-server-api.onrender.com/api/users/${id}`, {
           method: 'DELETE',
         })
 

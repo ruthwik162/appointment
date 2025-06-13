@@ -7,7 +7,8 @@ const AdminNav = () => {
     const navLinks = [
         { name: 'Home', path: '/adminhome' },
         { name: 'View Teachers', path: '/viewteachers' },
-        { name: 'View Students', path: '/viewstudents' }
+        { name: 'View Students', path: '/viewstudents' },
+        { name: 'All Appointments', path: '/allappointments' }
     ];
 
     const [isScrolled, setIsScrolled] = useState(false);
