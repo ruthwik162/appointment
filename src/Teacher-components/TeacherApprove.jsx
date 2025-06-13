@@ -45,7 +45,7 @@ const TeacherApprove = () => {
     const newStatus = currentStatus === "approved" ? "pending" : "approved";
     setUpdatingId(id);
     try {
-      await axios.patch(`http://localhost:3000/api/appointment/${id}`, { status: newStatus });
+      await axios.patch(`https://appointment-server-api.onrender.com/api/teacher-appointments/api/appointment/${id}`, { status: newStatus });
       setAppointments((prev) =>
         prev.map((appt) => (appt.id === id ? { ...appt, status: newStatus } : appt))
       );
