@@ -5,7 +5,7 @@ import ViewAllAppointments from './ViewAllAppointments'
 const AllAppointments = () => {
   return (
     <div>
-      <Department/>
+      {/* <Department/> */}
       <ViewAllAppointments/>
     </div>
   )

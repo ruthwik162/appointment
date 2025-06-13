@@ -122,7 +122,7 @@ export const AppContextProvider = ({ children }) => {
           role: user.role,
           gender: user.gender,
           password: user.password,
-          Image: user.image,
+          image: user.image, // ✅ include image
         };
 
         localStorage.setItem("user", JSON.stringify(userDetails));

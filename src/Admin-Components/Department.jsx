@@ -31,7 +31,7 @@ const Department = () => {
   // };
 
   return (
-    <div className="px-4 md:px-10 items-center pb-20 justify-center rounded-lg w-full max-w-7xl mx-auto">
+    <div className="px-4 md:px-10 mt-25 items-center pb-20 justify-center rounded-lg w-full max-w-7xl mx-auto">
       {/* Header with animated arrow */}
       <motion.div 
         initial={{ x: -20, opacity: 0 }}

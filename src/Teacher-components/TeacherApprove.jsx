@@ -102,7 +102,7 @@ const TeacherApprove = () => {
   }
 
   return (
-    <div className="max-w-4xl -mt-[150px] md:mt-0 mx-auto p-6">
+    <div className="w-screen -mt-[150px] md:mt-0 mx-auto px-15">
       
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -110,10 +110,10 @@ const TeacherApprove = () => {
         transition={{ duration: 0.5 }}
         className="mb-8"
       >
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Appointment Management</h1>
-        <p className="text-gray-600">Manage appointments for <span className="font-semibold text-blue-600">{user?.username}</span></p>
+        <h1 className="text-3xl font-bold flex items-center justify-center text-gray-800 mb-2">Appointment Management</h1>
+        <p className="text-gray-600 flex items-center justify-center">Manage appointments for <span className="font-semibold text-blue-600">{user?.username}</span></p>
         
-        <div className="flex flex-wrap gap-3 mt-6 mb-4">
+        <div className="flex items-center justify-center flex-wrap gap-3 mt-6 mb-4">
           <button
             onClick={() => setFilter("all")}
             className={`px-4 py-2 rounded-full text-sm font-medium ${filter === "all" ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}

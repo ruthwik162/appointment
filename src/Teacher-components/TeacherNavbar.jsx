@@ -92,7 +92,7 @@ const TeacherNavbar = () => {
                 ) : (
                     <div className="relative group">
                         <img
-                            src={user?.image || assets.profile_icon}
+                            src={user.image || assets.profile_icon}
                             alt="profile"
                             className="w-10 h-10 rounded-full object-cover "
                         />
