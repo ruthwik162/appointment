@@ -51,7 +51,7 @@ const TeacherNavbar = () => {
             }`}>
 
             {/* Logo */}
-            <NavLink to="/" className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl">
+            <NavLink to="/teacher-home" className="hover:scale-110 transition-transform duration-200 p-2 rounded-2xl">
                 <img className="h-15 rounded object-cover " src={assets.logo} alt="logo" />
             </NavLink>
 

@@ -23,22 +23,24 @@ const Faculty = () => {
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 800);
 
-    const baseFiltered = dept
+    const baseFiltered = (dept
       ? teacher.filter((t) => slugify(t.department) === dept.toLowerCase())
-      : teacher;
+      : teacher
+    ).filter((t) => t.role === "teacher");
 
     const results = searchQuery
       ? baseFiltered.filter((t) =>
-          (t.username || t.name)
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase())
-        )
+        (t.username || t.name)
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
       : baseFiltered;
 
     setFilteredResults(results);
 
     return () => clearTimeout(timer);
   }, [searchQuery, teacher, dept]);
+
 
   const handleMouseMove = (e, index) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -53,8 +55,8 @@ const Faculty = () => {
       {/* Header Section */}
       <header className="flex md:px-25 flex-col md:flex-row justify-between w-auto gap-6 mb-12 animate-slideDown">
         {/* Top section (Back + Department Title) */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-          <div className="flex items-center gap-3 md:gap-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-15">
+          <div className="flex items-center justify-around gap-20 md:gap-6">
             <div className="flex text-[1vw] items-center gap-2 cursor-pointer hover:-translate-x-1 transition-transform duration-300">
               <button
                 onClick={() => navigate(-1)}
@@ -79,7 +81,7 @@ const Faculty = () => {
         </div>
 
         {/* Bottom section (Search + Faculty Button) */}
-        <div className="flex flex-row sm:flex-row items-center justify-center gap-7 md:gap-5 w-full md:w-auto animate-slideDown delay-100">
+        <div className="flex flex-row sm:flex-row items-center justify-center gap-15 md:gap-5 w-full md:w-auto animate-slideDown delay-100">
           <div className="flex items-center border border-gray-200 rounded-xl px-4 py-2 bg-white shadow-sm hover:shadow-md transition-all duration-200 w-full md:w-80 hover:scale-[1.02]">
             <input
               type="search"
@@ -98,7 +100,7 @@ const Faculty = () => {
           {dept && (
             <button
               onClick={() => navigate("/faculty")}
-              className="font-medium pr-5 flex items-center w-1/4 justify-center gap-2 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-300 whitespace-nowrap hover:scale-[1.05] active:scale-95 sm:w-auto"
+              className="font-medium pr-10 flex items-center w-1/4 justify-center gap-2 py-2 rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-300 whitespace-nowrap hover:scale-[1.05] active:scale-95 sm:w-auto"
               aria-label="Go to all faculty"
             >
               View All Faculty

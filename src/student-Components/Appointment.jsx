@@ -57,10 +57,10 @@ const Appointment = () => {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className='flex items-center justify-center flex-col gap-6 p-6 w-full min-h-[70vh] md:min-h-[30vh]'
+            className='flex items-center justify-center flex-col gap-2 p-6 w-full min-h-[70vh] md:min-h-[30vh]'
         >
             <motion.div variants={itemVariants}
-                className="flex flex-row md:flex-row items-center justify-between gap-8 text-sm border border-gray-200 rounded-3xl p-6 max-w-8xl w-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="flex flex-row md:flex-row items-center justify-between gap-0 text-sm border border-gray-200 rounded-3xl p-5 max-w-8xl w-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
                 <motion.div variants={imageVariants} className='flex-1 flex justify-center'>
                     <img className="max-w-[100px] md:max-w-[180px] lg:max-w-[200px] transition-transform duration-300 hover:scale-105"

@@ -39,7 +39,7 @@ export const AppContextProvider = ({ children }) => {
 
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get(`${URL}/api/appointments`);
+      const res = await axios.get(`${URL}/api/allappointments`);
       setAppointments(res.data);
     } catch (error) {
       console.error("Failed to fetch appointments:", error);

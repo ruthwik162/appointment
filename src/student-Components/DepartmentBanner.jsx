@@ -42,7 +42,7 @@ const AppointmentBanner = () => {
             }
         },
         float: {
-            y: [0, -17, 0],
+            y: [0, -10, 0],
             transition: {
                 duration: 4,
                 repeat: Infinity,
@@ -110,11 +110,11 @@ const AppointmentBanner = () => {
             <div className="container mx-auto p-5 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     variants={containerVariants}
-                    className="flex flex-row-reverse  md:flex-row-reverse items-center justify-between gap-6 md:gap-10 bg-white rounded-3xl shadow-xl overflow-hidden"
+                    className="flex flex-row-reverse  md:flex-row-reverse items-center justify-between gap-7 md:gap-10 bg-white rounded-3xl shadow-xl overflow-hidden"
                 >
                     <motion.div
                         variants={containerVariants}
-                        className="w-full md:w-1/2 p-6  md:p-8 lg:p-10 flex flex-col items-center md:items-start text-center md:text-left"
+                        className="w-full md:w-1/2 p-2 items-end md:p-8 lg:p-10 flex flex-col  md:items-start text-center md:text-left"
                     >
                         <motion.h2
                             variants={textVariants}
