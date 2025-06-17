@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { assets } from '../assets/assets';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useAppContext } from '../AppContext/AppContext';
 
 const Mainbanner = () => {
+  const { user, navigate, setShowUserLogin } = useAppContext();
   const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2,
@@ -80,7 +82,7 @@ const Mainbanner = () => {
 
   return (
     <div className='flex items-center justify-center pt-40 px-4 sm:px-6 lg:px-8'>
-      <motion.div 
+      <motion.div
         ref={ref}
         initial="hidden"
         animate={controls}
@@ -89,24 +91,24 @@ const Mainbanner = () => {
       >
         {/* Gradient background element */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#06d6a0]/10 to-[#06d6a0]/20 opacity-30 -z-1"></div>
-        
+
         {/* Floating decorative elements */}
         <div className="absolute top-0 left-0 w-20 h-20 bg-[#06d6a0]/20 rounded-full filter blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-32 h-32 bg-[#06d6a0]/20 rounded-full filter blur-3xl opacity-20"></div>
 
-        <motion.div 
-          variants={imageVariants} 
+        <motion.div
+          variants={imageVariants}
           className="relative w-full sm:w-1/2 p-6 sm:p-8 md:p-10 lg:p-12 z-10 flex justify-center"
           animate="float" // Add the floating animation
         >
-          <img 
-            src={assets.mainbanner1} 
-            alt="excitedWomenImage"  
+          <img
+            src={assets.mainbanner1}
+            alt="excitedWomenImage"
             className="w-full max-w-md h-85 object-contain transform hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={textVariants}
           className="w-full sm:w-1/2 flex flex-col text-center sm:text-left items-center sm:items-start p-6 sm:p-8 md:p-10 lg:p-12 z-10"
         >
@@ -116,7 +118,7 @@ const Mainbanner = () => {
               Appointments using our app today.
             </span>
           </h2>
-          
+
           <p className="text-gray-500 mb-8 max-w-md text-base sm:text-lg">
             Join thousands of professionals who already increased their productivity by 40% with our solution.
           </p>
@@ -126,35 +128,36 @@ const Mainbanner = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              type="button" 
-              aria-label="getStarted" 
+              type="button"
+              aria-label="getStarted"
               className="w-full sm:w-auto bg-[#06d6a0] hover:bg-[#04b489] px-8 py-3.5 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group font-medium"
-            >
+              onClick={() => {
+                if (!user) {setShowUserLogin(true)} else {navigate("/faculty");}}}>
               Get started
             </motion.button>
-            
+
             <motion.button
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              type="button" 
-              className="w-full sm:w-auto group flex items-center justify-center gap-2 px-8 py-3.5 transition-all duration-300 rounded-lg border border-gray-300 hover:border-[#06d6a0] hover:bg-[#06d6a0]/10"
+              type="button"
+              className="w-full sm:w-auto group flex items-center justify-center gap-2 px-8 py-3.5 transition-all duration-300 rounded-lg border border-gray-300 hover:border-[#06d6a0] "
             >
-              <span className="font-medium text-gray-700 group-hover:text-[#06d6a0]">Learn more</span>
-              <svg 
-                className="mt-0.5 group-hover:translate-x-1 transition-transform duration-300 group-hover:text-[#06d6a0]" 
-                width="16" 
-                height="12" 
-                viewBox="0 0 16 12" 
-                fill="none" 
+              <span className="font-medium text-gray-700 ">Learn more</span>
+              <svg
+                className="mt-0.5 group-hover:translate-x-1 transition-transform duration-300 group-hover:text-[#06d6a0]"
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
-                  d="M1 6h14M10 1l5 5-5 5" 
-                  stroke="currentColor" 
-                  strokeWidth="1.5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
+                <path
+                  d="M1 6h14M10 1l5 5-5 5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </motion.button>

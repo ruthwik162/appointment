@@ -62,7 +62,7 @@ export const deptDetails = [
     department:"Data Science",
     path: "Data-Science",
     image: ds,
-    bgColor: "#102542",
+    bgColor: "#2bc0e4",
   },
   {
     name: "C S",

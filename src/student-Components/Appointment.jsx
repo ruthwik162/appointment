@@ -57,7 +57,7 @@ const Appointment = () => {
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className='flex items-center justify-center flex-col gap-2 p-6 w-full min-h-[70vh] md:min-h-[30vh]'
+            className='flex items-center py-20 justify-center flex-col gap-2 p-6 w-full max-w-7xl min-h-[20vh] md:min-h-[30vh]'
         >
             <motion.div variants={itemVariants}
                 className="flex flex-row md:flex-row items-center justify-between gap-0 text-sm border border-gray-200 rounded-3xl p-5 max-w-8xl w-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"

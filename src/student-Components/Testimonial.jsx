@@ -56,13 +56,13 @@ const Testimonial = () => {
   };
 
   return (
-    <div className='px-5 md:px-30 flex items-center justify-center '>
+    <div className='px-5 md:px-10 flex items-center justify-center '>
       <motion.div
         ref={ref}
         initial="hidden"
         animate={controls}
         variants={containerVariants}
-        className="relative mt-8 p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-100 max-w-full  mx-auto"
+        className="relative mt-8 p-7  md:p-10 bg-gradient-to-br from-white to-gray-50 rounded-xl flex flex-col md:flex-row md:gap-20 shadow-lg border border-gray-100 max-w-full md:max-w-7xl  mx-auto"
       >
         {/* Live Demo Badge */}
         <motion.div
@@ -70,14 +70,26 @@ const Testimonial = () => {
           className="absolute -top-3 -right-3 bg-white px-4 py-2 rounded-full shadow-md flex items-center z-10"
           whileHover={{ scale: 1.05 }}
         >
+          {/* Pulsing green indicator */}
           <motion.div
-            className="w-3 h-3 bg-green-400 rounded-full mr-2"
-            variants={pulseVariants}
-            initial="initial"
-            animate="pulse"
+            className="w-3 h-3 bg-green-400 rounded-full mr-2 shadow-md"
+            animate={{
+              scale: [0.8, 1.2, 0.8],
+              opacity: [0.8, 1, 0.8],
+            }}
+            transition={{
+              duration: 2.2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
           />
-          <span className="text-xs font-medium text-gray-700">Live demo available</span>
+
+          {/* Text */}
+          <span className="text-xs font-medium text-gray-700">
+            Live demo available
+          </span>
         </motion.div>
+
 
         <div className="flex items-center gap-4">
           {/* User Avatars */}
@@ -154,8 +166,7 @@ const Testimonial = () => {
           className="mt-4 pt-4 border-t border-gray-100"
         >
           <p className="text-gray-600 italic text-sm">
-            "This product changed my workflow completely. Highly recommended!"
-          </p>
+            It not only simplifies scheduling but also empowers both parties with transparency and control over their availability, thus creating a more efficient and collaborative educational experience.          </p>
           <p className="text-right text-xs text-gray-500 mt-1">— Sarah J., Product Designer</p>
         </motion.div>
       </motion.div>

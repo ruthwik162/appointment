@@ -40,13 +40,13 @@ const About = () => {
   };
 
   return (
-    <div className="py-5 pb-5 px-4 sm:px-6 lg:px-10">
+    <div className="py-5 pb-5 px-4 flex items-center justify-center sm:px-6  lg:px-25">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={controls}
         variants={containerVariants}
-        className="relative bg-white border border-gray-200 rounded-2xl shadow-xl max-w-5xl mx-auto p-8 sm:p-12 text-center sm:text-left overflow-hidden"
+        className="relative bg-white border border-gray-200 rounded-2xl shadow-xl max-w-9xl mx-auto p-8 sm:p-12 text-center sm:text-left overflow-hidden"
       >
         {/* Background gradient blur */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#06d6a0]/10 to-[#04b489]/20 opacity-30 -z-10 rounded-2xl"></div>

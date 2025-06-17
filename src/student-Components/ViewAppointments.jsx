@@ -77,8 +77,8 @@ const ViewAppointments = () => {
   );
 
   return (
-    <div className="min-h-screen w-full sm:-translate-y-40 md:-translate-y-0 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen w-full  sm:-translate-y-40 md:-translate-y-0 py-2 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">My Appointments</h1>

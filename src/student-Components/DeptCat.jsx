@@ -76,11 +76,11 @@ const DeptCat = () => {
             className="relative overflow-hidden bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
             style={{ backgroundColor: item.bgColor }}
             key={index}
-            whileHover={{ scale: 1.19 }}
+            whileHover={{ scale: 1.1 }}
           >
             <div className="p-1">
               <motion.img
-                className="rounded-lg w-full h-40 md:h-48 object-cover cursor-pointer"
+                className="rounded-lg w-full h-42 md:h-42 object-cover cursor-pointer"
                 src={item.image}
                 alt={item.name}
                 onClick={() => navigate(`/faculty/${item.path.toLowerCase()}`)}
@@ -117,7 +117,7 @@ const DeptCat = () => {
         transition={{ delay: 0.5 }}
       >
         <button 
-          className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all hover:scale-105"
+          className="px-6 py-3 bg-[#06d6a0] text-white rounded-2xl font-medium shadow-lg hover:shadow-xl transition-all hover:scale-90"
           onClick={() => navigate('/faculty')}
         >
           View All Departments

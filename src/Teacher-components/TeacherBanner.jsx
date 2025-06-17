@@ -101,7 +101,7 @@ const Teacherbanner = () => {
 
         <motion.div
           variants={imageVariants}
-          className="relative w-full sm:w-1/2 p-6 sm:p-8 md:p-10 lg:p-12 z-10 flex justify-center"
+          className="relative w-full max-w-5xl sm:w-1/2 p-6 sm:p-8 md:p-10 lg:p-8 z-10 flex justify-center"
           animate="float" // Add the floating animation
         >
           <img

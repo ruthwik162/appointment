@@ -136,7 +136,7 @@ const Navbar = () => {
                         {isProfileDropdownOpen && (
                             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
                                 <div className="px-4 py-2 border-b border-gray-100">
-                                    <p className="text-sm font-medium text-gray-800">{user.name || 'User'}</p>
+                                    <p className="text-sm font-medium text-gray-800">{user.username || 'User'}</p>
                                     <p className="text-xs text-gray-500 truncate">{user.email}</p>
                                 </div>
                                 <button
@@ -223,7 +223,7 @@ const Navbar = () => {
                             alt="profile"
                             className="w-16 h-16 rounded-full object-cover border-2 border-indigo-100 shadow-md"
                         />
-                        <p className="font-medium">{user.name || 'User'}</p>
+                        <p className="font-medium">{user.username || 'User'}</p>
                         <p className="text-sm text-gray-500">{user.email}</p>
                     </div>
                 )}
