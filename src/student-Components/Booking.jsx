@@ -76,14 +76,14 @@ const Booking = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br pt-35 from-indigo-50 to-blue-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100 py-28 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto ">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header with back button */}
-          <div className="bg-[#06d6a0] px-6 py-4 flex items-center justify-between">
+          <div className="bg-[#06d6a0] px-6 py-4  flex items-center justify-around">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center text-white hover:text-indigo-200 transition-colors duration-200"
+              className="flex items-center text-white cursor-pointer hover:text-indigo-200 transition-colors duration-200"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,7 @@ const Booking = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#06d6a0] hover:bg-[#71c8b1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200 ${
+                  className={`w-full flex justify-center py-3 px-4 border max-w-xl i border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#06d6a0]  cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-200 ${
                     loading ? "opacity-70 cursor-not-allowed" : ""
                   }`}
                 >
